@@ -227,21 +227,21 @@ img { max-width: 100%; display: block; }
     overflow: hidden;
 }
 
-.hero-decoration {
+.hero-bg {
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    overflow: hidden;
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    z-index: 0;
 }
 
-.deco-circle {
+.hero-overlay {
     position: absolute;
-    border-radius: 50%;
-    border: 1px solid rgba(255,255,255,0.08);
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(135deg, rgba(107,23,64,0.88) 0%, rgba(139,34,82,0.8) 40%, rgba(160,51,107,0.75) 70%, rgba(212,165,116,0.7) 100%);
+    z-index: 1;
 }
-
-.deco-1 { width: 600px; height: 600px; top: -200px; right: -100px; }
-.deco-2 { width: 400px; height: 400px; bottom: -100px; left: -100px; }
-.deco-3 { width: 300px; height: 300px; top: 50%; right: 20%; border-color: rgba(255,255,255,0.05); }
 
 .hero-content {
     position: relative;
@@ -477,22 +477,13 @@ img { max-width: 100%; display: block; }
     color: var(--gray-600);
 }
 
-.visual-placeholder {
+.why-us-photo {
     width: 100%;
     height: 450px;
-    background: linear-gradient(135deg, var(--primary), var(--primary-dark), #A0336B);
+    object-fit: cover;
     border-radius: var(--radius-xl);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: var(--white);
-    gap: 12px;
+    box-shadow: var(--shadow-lg);
 }
-
-.visual-placeholder i { font-size: 4rem; opacity: 0.5; }
-.visual-placeholder span { font-size: 1.5rem; font-family: 'Playfair Display', serif; font-weight: 600; opacity: 0.8; }
-.visual-placeholder em { font-size: 0.9rem; opacity: 0.6; font-family: 'Inter', sans-serif; }
 
 /* ===== GALLERY ===== */
 .gallery {
@@ -510,26 +501,15 @@ img { max-width: 100%; display: block; }
 .gallery-item { border-radius: var(--radius-md); overflow: hidden; }
 .gallery-item.large { grid-row: span 2; }
 
-.gallery-placeholder {
+.gallery-photo {
     width: 100%; height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    color: var(--white);
-    font-size: 1rem;
-    font-weight: 600;
-    transition: var(--transition);
+    object-fit: cover;
+    transition: transform 0.5s ease;
     cursor: pointer;
 }
 
-.gallery-placeholder i { font-size: 2.5rem; opacity: 0.7; }
-.gallery-placeholder span { opacity: 0.9; }
-
-.gallery-placeholder:hover {
-    transform: scale(1.03);
-    filter: brightness(1.1);
+.gallery-item:hover .gallery-photo {
+    transform: scale(1.05);
 }
 
 .gallery-note {
