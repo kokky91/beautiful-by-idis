@@ -56,28 +56,7 @@ backToTop.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-// ===== CONTACT FORM -> WHATSAPP =====
-const contactForm = document.getElementById('contactForm');
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-
-        const name = document.getElementById('name').value;
-        const phone = document.getElementById('phone').value;
-        const service = document.getElementById('service').value;
-        const date = document.getElementById('date').value;
-        const message = document.getElementById('message').value;
-
-        let msg = `Hello Say, I would like to book an appointment.\n\n`;
-        msg += `*Name:* ${name}\n`;
-        msg += `*Phone:* ${phone}\n`;
-        msg += `*Service:* ${service}\n`;
-        if (date) msg += `*Preferred Date:* ${date}\n`;
-        if (message) msg += `*Details:* ${message}\n`;
-
-        window.open(`https://wa.me/2203125674?text=${encodeURIComponent(msg)}`, '_blank');
-    });
-}
+// ===== BOOKING handled by Cal.com embed =====
 
 // ===== SMOOTH LOAD =====
 document.addEventListener('DOMContentLoaded', () => {
